@@ -35,5 +35,27 @@ public class Testes {
 		
 		f.removePessoa(proximo);
 	}
+	
+	@Test
+	public void TesteGravida(){
+		Pessoa p4 = new Pessoa("Maria", false, false);
+		Pessoa p5 = new Pessoa("Joana", true, false);
+		
+		Fila f2 = new Fila();
+		f2.addPessoa(p4);
+		f2.addPessoa(p5);
+		
+		Pessoa proximo2 = f2.proximoFila();
+		Assert.assertEquals(proximo2.isGravida(), true);
+		
+		f2.removePessoa(proximo2);
+		proximo2 = f2.proximoFila();
+		
+		Assert.assertEquals(proximo2.isGravida(), false);
+		f2.removePessoa(proximo2);
+		proximo2 = f2.proximoFila();
+			
+		
+	}
 
 }

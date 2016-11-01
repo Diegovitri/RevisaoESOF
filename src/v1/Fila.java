@@ -17,6 +17,9 @@ public class Fila {
 	public Pessoa proximoFila(){
 		Pessoa proximo = null;
 		
+		if(pessoas.isEmpty())
+			return null;
+		
 		proximo = verificaGravida();
 		
 		if(proximo == null)
